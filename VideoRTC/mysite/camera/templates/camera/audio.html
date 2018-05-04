@@ -1,0 +1,22 @@
+
+{% load staticfiles %} {% load static %}
+<title>Audio Recording | RecordRTC</title>
+<h1>Simple Audio Recording using RecordRTC</h1>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+<br>
+
+<button id="btn-start-recording">Start Recording</button>
+<button id="btn-stop-recording" disabled>Stop Recording</button>
+<button id="btn-release-microphone" disabled>Release Microphone</button>
+<button id="btn-download-recording" disabled>Download</button>
+
+<button id="iniciar" > Começar gravação </button>
+
+<button id="terminar" disabled>terminar</button>
+<script src="{% static "camera/audio.js" %} "></script>
+<hr>
+<div><audio id="your-audio-id" controls autoplay></audio></div>
+
+<script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>

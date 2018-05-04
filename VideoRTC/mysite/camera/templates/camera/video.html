@@ -1,0 +1,25 @@
+{% load staticfiles %} {% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+</head>
+
+<body>
+<h1 id="header">RecordRTC Upload to PHP</h1>
+    
+    <video id="your-video-id" controls autoplay=""></video>
+    <button id="iniciar" > Começar gravação </button>
+
+    <button id="terminar" disabled>terminar</button>
+    <script src="{% static "camera/video5s.js" %} "></script>
+
+   
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{% load staticfiles %} {% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    
+</head>
+
+<body>
+<h1 id="header">RecordRTC Upload to PHP</h1>
+    {% for v in videos %}
+    {{v.nome}} </br>
+    {{v.video.url}}
+    
+    <video href="{{v.video.url }}"></video>
+    {% endfor %}
+</body>
+
+</html>
