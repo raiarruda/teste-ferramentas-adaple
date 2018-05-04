@@ -1,0 +1,21 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+  {{ form.media }}
+</head>
+<body>
+    {{ my_model.content|safe }}
+oi
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Salvar</button>
+      </form>
+
+
+    <!-- Prism JS -->
+<script src="{% static "tinymce/js/prism.js" %}"></script>
+</body>
+</html>

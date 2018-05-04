@@ -1,0 +1,10 @@
+*.pyc
+env
+devenv
+example/example.db
+*~
+*.vs
+*.vscode
+__pycache__
+db.sqlite3
+.DS_Store
