@@ -27,4 +27,8 @@ urlpatterns = [
     path('visualizar/', views.visualizarVideos, name='visualizarVideos'),
     #TODO: 
     path('audio/', views.audio, name='audio'),
+    path('form/', views.formulario, name='home'),
+    path('ver/', views.ver, name='ver'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

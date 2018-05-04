@@ -1,0 +1,30 @@
+{% load static from staticfiles %}
+ {% load wysiwyg %}<!DOCTYPE html>
+<html>
+<head><script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+  {{ form.media }}
+</head>
+<body>
+
+
+{% wysiwyg_setup %}
+<textarea id="foo"></textarea>
+
+{% wysiwyg_editor "cke_id_content" %}
+
+
+    {{ my_model.content|safe }}
+oi
+    <form method="post">
+        {% csrf_token %}
+        {{ form.content }}
+        <button type="submit">Salvar</button>
+      </form>
+
+
+    <!-- Prism JS -->
+<script src="{% static "tinymce/js/prism.js" %}"></script>
+</body>
+</html>

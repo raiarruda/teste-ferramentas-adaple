@@ -1,0 +1,22 @@
+{% load static from staticfiles %}
+{% load wysiwyg %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+  {{ form.media }}
+</head>
+<body>
+    
+oi
+
+{% for m in modelos%} 
+<div  class="row">
+{{ m.content|safe }}
+
+</div>
+{%endfor%}
+    <!-- Prism JS -->
+<script src="{% static "tinymce/js/prism.js" %}"></script>
+</body>
+</html>

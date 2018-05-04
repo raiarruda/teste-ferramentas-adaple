@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse, StreamingHttpResponse, HttpResponseRedirect
-from .models import db_video
-from .forms import UploadFileForm
+from .models import db_video, MyModel
+from .forms import UploadFileForm, MyForm
 import uuid  # TODO
-from apiclient.discovery import build
+#from apiclient.discovery import build
 from .models  import db_video
 
 def visualizarVideos(request):
@@ -69,3 +69,32 @@ def handle_uploaded_file2(f):
     
     
         
+
+def formulario(request):
+    template ='camera/teste.html'
+
+    
+    if request.method == "POST":
+            form = MyForm(request.POST)
+            if form.is_valid():
+
+                f = form.save(commit=False)
+                f.save()
+                
+
+                return HttpResponse("form salvo", content_type='plain/text')
+            else:
+                return ( request, template, {'form':form})
+
+    else:
+        form = MyForm()
+        return render( request, template, {'form':form})
+
+    return render( request, template, {'form':form})
+
+def ver(request):
+
+    template='camera/ver.html'
+    modelos = MyModel.objects.all()
+
+    return render(request,template,{'modelos':modelos})

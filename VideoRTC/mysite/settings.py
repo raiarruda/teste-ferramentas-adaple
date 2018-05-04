@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mysite.camera',
     'django_extensions',
+    'django_wysiwyg',
+    'ckeditor',
 
 ]
 
@@ -115,6 +117,20 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source', 'HiddenField', 'Save']
+        ]
+    }
+    }
 
 
 # Static files (CSS, JavaScript, Images)
