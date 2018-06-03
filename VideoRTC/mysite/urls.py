@@ -14,21 +14,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from mysite.camera import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
-
+from mysite.audio import urls as audio_urls
 urlpatterns = [
+    path('audio/', include(audio_urls)),
     path('admin/', admin.site.urls),
     path('video/', views.video, name='camera'),
-    path('video2/', views.video2, name='video2'),
+   # path('video/', views.VideoView, name='camera'),
+    
     path('visualizar/', views.visualizarVideos, name='visualizarVideos'),
     #TODO: 
-    path('audio/', views.audio, name='audio'),
+    
     path('form/', views.formulario, name='home'),
     path('ver/', views.ver, name='ver'),
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
+if settings.DEBUG:
+    urlpatterns += static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT)
+    urlpatterns += staticfiles_urlpatterns()

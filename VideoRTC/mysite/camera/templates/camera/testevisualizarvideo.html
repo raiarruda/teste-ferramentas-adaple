@@ -12,15 +12,23 @@
 </head>
 
 <body>
-<h1 id="header">RecordRTC Upload to PHP</h1>
-    {% for v in videos %}
-    {{v.nome}} </br>
-    {{v.video.url}}
-    
-    <video href="{{v.video.url }}"></video>
-    {% endfor %}
 
-    ________________
+    {% for v in videos %}
+    <h1>{{v.nome}}</h1> 
+   <h2>{{v.video.url}}</h2> 
+    
+    <video controls>
+        <source src="{{v.video.url }}">
+            seu broweasioaiosj
+               
+               
+    </video>
+    {% endfor %}
+ 
+   
+    </video>
+
+ 
 
 
 </body>

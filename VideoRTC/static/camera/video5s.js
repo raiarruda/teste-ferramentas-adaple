@@ -1,4 +1,5 @@
 function getCookie(name) {
+    console.log("hello")
     var cookieValue = null;
     if (document.cookie && document.cookie != '') {
         var cookies = document.cookie.split(';');
@@ -35,7 +36,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(function 
 
     document.getElementById('iniciar').onclick = (function (){
         this.disabled = true;
-
+      
         document.getElementById('your-video-id').muted = true;
         setSrcObject(camera, document.getElementById('your-video-id'));
         recorder = RecordRTC(camera, { type: 'video'});
@@ -54,6 +55,7 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then(function 
             var blob = recorder.getBlob();
             // generating a random file name
             var fileName = getFileName('webm');
+            console.log("filename");
             // we need to upload "File" --- not "Blob"
             var fileObject = new File([blob], fileName, {
                 type: 'video/webm'
